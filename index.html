@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divya Darshan - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body {
+            background: linear-gradient(to bottom right, #f8fafc, #e0f2fe, #f3e8ff);
+            min-height: 100vh;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .glass-strong {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #2563eb, #9333ea, #db2777);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section { display: none; }
+        .section.active { display: block; }
+        .nav-link { cursor: pointer; }
+        .nav-link.active {
+            background: linear-gradient(to right, rgba(37, 99, 235, 0.2), rgba(147, 51, 234, 0.2));
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body class="text-slate-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-strong border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <div class="text-2xl font-bold gradient-text cursor-pointer" onclick="showSection('home')">Divya Darshan</div>
+                <div class="hidden md:flex space-x-8">
+                    <div class="nav-link active px-3 py-2 rounded-lg text-sm font-medium transition-all" onclick="showSection('home')">Home</div>
+                    <div class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition-all" onclick="showSection('about')">About</div>
+                    <div class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition-all" onclick="showSection('projects')">Projects</div>
+                    <div class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition-all" onclick="showSection('resume')">Resume</div>
+                    <div class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition-all" onclick="showSection('contact')">Contact</div>
+                </div>
+                <button class="md:hidden p-2 rounded-lg" onclick="toggleMobileMenu()">☰</button>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden pb-4 space-y-2">
+                <div class="nav-link px-4 py-2 rounded-lg text-sm font-medium" onclick="showSection('home')">Home</div>
+                <div class="nav-link px-4 py-2 rounded-lg text-sm font-medium" onclick="showSection('about')">About</div>
+                <div class="nav-link px-4 py-2 rounded-lg text-sm font-medium" onclick="showSection('projects')">Projects</div>
+                <div class="nav-link px-4 py-2 rounded-lg text-sm font-medium" onclick="showSection('resume')">Resume</div>
+                <div class="nav-link px-4 py-2 rounded-lg text-sm font-medium" onclick="showSection('contact')">Contact</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active pt-16 md:pt-20">
+        <div class="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8">
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400/30 rounded-full blur-3xl animate-pulse"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400/30 rounded-full blur-3xl"></div>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto w-full">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-center md:text-left space-y-8">
+                        <div class="space-y-4">
+                            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
+                                <span class="gradient-text">Divya Darshan</span>
+                            </h1>
+                            <p class="text-2xl md:text-3xl font-semibold text-slate-700">Hardware Engineer & Developer</p>
+                            <p class="text-lg md:text-xl text-slate-600 max-w-2xl">Passionate about digital design, Verilog, and creating innovative hardware solutions. Building the future, one circuit at a time.</p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <button onclick="showSection('projects')" class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105">View My Work</button>
+                            <button onclick="showSection('contact')" class="px-8 py-4 glass-strong text-slate-700 rounded-xl font-semibold hover:bg-white/20 transition-all hover:scale-105">Get In Touch</button>
+                        </div>
+                    </div>
+                    <div class="relative flex justify-center md:justify-end hidden md:block">
+                        <div class="relative">
+                            <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-full blur-2xl opacity-30"></div>
+                                <div class="relative w-full h-full glass-strong rounded-full p-2 shadow-2xl">
+                                    <img src="./photo.jpg" alt="Divya Darshan" class="w-full h-full object-cover rounded-full border-4 border-white/20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="w-full h-full rounded-full bg-gradient-to-br from-blue-500 to-purple-500 items-center justify-center text-white text-4xl md:text-5xl font-bold hidden">DD</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="glass-strong rounded-2xl p-6 text-center hover:scale-105 transition-transform">
+                        <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">17+</div>
+                        <div class="text-sm md:text-base text-slate-600">Projects</div>
+                    </div>
+                    <div class="glass-strong rounded-2xl p-6 text-center hover:scale-105 transition-transform">
+                        <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">10+</div>
+                        <div class="text-sm md:text-base text-slate-600">Technologies</div>
+                    </div>
+                    <div class="glass-strong rounded-2xl p-6 text-center hover:scale-105 transition-transform">
+                        <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">2+ Years</div>
+                        <div class="text-sm md:text-base text-slate-600">Experience</div>
+                    </div>
+                    <div class="glass-strong rounded-2xl p-6 text-center hover:scale-105 transition-transform">
+                        <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">17</div>
+                        <div class="text-sm md:text-base text-slate-600">Repositories</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section pt-16 md:pt-20 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+            <div class="text-center mb-16">
+                <div class="flex justify-center mb-8">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-full blur-2xl opacity-30"></div>
+                        <div class="relative w-48 h-48 md:w-64 md:h-64 glass-strong rounded-full p-2 shadow-2xl">
+                            <img src="./photo.jpg" alt="Divya Darshan" class="w-full h-full object-cover rounded-full border-4 border-white/20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-full rounded-full bg-gradient-to-br from-blue-500 to-purple-500 items-center justify-center text-white text-3xl md:text-4xl font-bold hidden">DD</div>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4"><span class="gradient-text">About Me</span></h1>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">Passionate hardware engineer with expertise in digital design and RISC-V architecture</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 mb-20">
+                <div class="glass-strong rounded-3xl p-8 space-y-6">
+                    <h2 class="text-3xl font-bold mb-4">Who I Am</h2>
+                    <p class="text-slate-700 leading-relaxed">I'm a dedicated hardware engineer and B.E ECE student at College of Engineering, Guindy, Anna University. Currently working as a RISC-V Design Intern at IIT Madras's Shakti Processor Project, where I focus on improving processor pipeline design and hardware-software optimization.</p>
+                    <p class="text-slate-700 leading-relaxed">My expertise spans from Verilog HDL and RISC-V architecture to complete RTL → GDSII flows using OpenLANE. I've successfully designed and implemented processors, completed tapeout submissions, and built practical IoT systems.</p>
+                </div>
+                <div class="glass-strong rounded-3xl p-8 space-y-6">
+                    <h2 class="text-3xl font-bold mb-4">What I Do</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4"><span class="text-blue-500 text-xl">⚡</span><span class="text-slate-700 text-lg">Digital Circuit Design</span></div>
+                        <div class="flex items-center gap-4"><span class="text-purple-500 text-xl">🔧</span><span class="text-slate-700 text-lg">RISC-V Architecture</span></div>
+                        <div class="flex items-center gap-4"><span class="text-pink-500 text-xl">💻</span><span class="text-slate-700 text-lg">FPGA Development</span></div>
+                        <div class="flex items-center gap-4"><span class="text-indigo-500 text-xl">✅</span><span class="text-slate-700 text-lg">Hardware Verification</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-20">
+                <h2 class="text-4xl font-bold mb-8 text-center"><span class="gradient-text">Skills</span></h2>
+                <div class="glass-strong rounded-3xl p-8">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <div class="flex justify-between"><span class="font-semibold">Verilog HDL</span><span class="text-sm text-slate-600">90%</span></div>
+                            <div class="h-3 bg-slate-200 rounded-full"><div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style="width:90%"></div></div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between"><span class="font-semibold">RISC-V Architecture</span><span class="text-sm text-slate-600">88%</span></div>
+                            <div class="h-3 bg-slate-200 rounded-full"><div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style="width:88%"></div></div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between"><span class="font-semibold">Digital Design</span><span class="text-sm text-slate-600">85%</span></div>
+                            <div class="h-3 bg-slate-200 rounded-full"><div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style="width:85%"></div></div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between"><span class="font-semibold">FPGA Prototyping</span><span class="text-sm text-slate-600">82%</span></div>
+                            <div class="h-3 bg-slate-200 rounded-full"><div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style="width:82%"></div></div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between"><span class="font-semibold">C/C++</span><span class="text-sm text-slate-600">80%</span></div>
+                            <div class="h-3 bg-slate-200 rounded-full"><div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style="width:80%"></div></div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between"><span class="font-semibold">Python</span><span class="text-sm text-slate-600">75%</span></div>
+                            <div class="h-3 bg-slate-200 rounded-full"><div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style="width:75%"></div></div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between"><span class="font-semibold">OpenLANE & VLSI Tools</span><span class="text-sm text-slate-600">85%</span></div>
+                            <div class="h-3 bg-slate-200 rounded-full"><div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style="width:85%"></div></div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between"><span class="font-semibold">Embedded Systems</span><span class="text-sm text-slate-600">80%</span></div>
+                            <div class="h-3 bg-slate-200 rounded-full"><div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style="width:80%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-4xl font-bold mb-8 text-center"><span class="gradient-text">Certifications</span></h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="glass-strong rounded-2xl p-6 hover:scale-105 transition-transform">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="p-3 glass rounded-xl"><span class="text-blue-500 text-2xl">🏆</span></div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-lg mb-1">VSD RISCV Workshop</h3>
+                                <p class="text-sm text-slate-600">VSD</p>
+                            </div>
+                            <span class="text-xs font-semibold text-blue-600 bg-blue-100 px-2 py-1 rounded">2024</span>
+                        </div>
+                        <p class="text-sm text-slate-600">Comprehensive workshop on RISC-V architecture and design</p>
+                    </div>
+                    <div class="glass-strong rounded-2xl p-6 hover:scale-105 transition-transform">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="p-3 glass rounded-xl"><span class="text-purple-500 text-2xl">🎓</span></div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-lg mb-1">CEG Fabless Intern</h3>
+                                <p class="text-sm text-slate-600">CEG</p>
+                            </div>
+                            <span class="text-xs font-semibold text-blue-600 bg-blue-100 px-2 py-1 rounded">2024</span>
+                        </div>
+                        <p class="text-sm text-slate-600">Internship in fabless semiconductor design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section pt-16 md:pt-20 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4"><span class="gradient-text">My Projects</span></h1>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">A collection of hardware design projects, RISC-V implementations, and digital circuit designs</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-strong rounded-3xl p-6 hover:scale-105 transition-all">
+                    <div class="mb-4 p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 w-fit"><span class="text-white text-2xl">💻</span></div>
+                    <h3 class="text-2xl font-bold mb-3">8-Bit Accumulator-Based Processor</h3>
+                    <p class="text-slate-600 mb-4">A complete 8-bit processor implementation with accumulator architecture.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 text-xs font-semibold glass rounded-full">Verilog</span>
+                        <span class="px-3 py-1 text-xs font-semibold glass rounded-full">Digital Design</span>
+                    </div>
+                    <a href="https://github.com/DivyaDarshan09/8-Bit-Accumulator-Based-Processor" target="_blank" class="text-blue-600 hover:underline">View Code →</a>
+                </div>
+                <div class="glass-strong rounded-3xl p-6 hover:scale-105 transition-all">
+                    <div class="mb-4 p-4 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 w-fit"><span class="text-white text-2xl">🔧</span></div>
+                    <h3 class="text-2xl font-bold mb-3">CF-RV-25-05</h3>
+                    <p class="text-slate-600 mb-4">RISC-V implementation project focusing on core architecture.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 text-xs font-semibold glass rounded-full">Bluespec</span>
+                        <span class="px-3 py-1 text-xs font-semibold glass rounded-full">RISC-V</span>
+                    </div>
+                    <a href="https://github.com/DivyaDarshan09/CF-RV-25-05" target="_blank" class="text-blue-600 hover:underline">View Code →</a>
+                </div>
+                <div class="glass-strong rounded-3xl p-6 hover:scale-105 transition-all">
+                    <div class="mb-4 p-4 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-500 w-fit"><span class="text-white text-2xl">📚</span></div>
+                    <h3 class="text-2xl font-bold mb-3">VSD RISCV Week 0</h3>
+                    <p class="text-slate-600 mb-4">Initial week of VSD RISC-V workshop covering fundamentals.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 text-xs font-semibold glass rounded-full">RISC-V</span>
+                        <span class="px-3 py-1 text-xs font-semibold glass rounded-full">Workshop</span>
+                    </div>
+                    <a href="https://github.com/DivyaDarshan09/Divya_Darshan-VSD-RISCV-week-0" target="_blank" class="text-blue-600 hover:underline">View Code →</a>
+                </div>
+                <div class="glass-strong rounded-3xl p-6 hover:scale-105 transition-all">
+                    <div class="mb-4 p-4 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 w-fit"><span class="text-white text-2xl">⚡</span></div>
+                    <h3 class="text-2xl font-bold mb-3">VSD RISCV Week 1</h3>
+                    <p class="text-slate-600 mb-4">Advanced RISC-V concepts including pipeline design.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 text-xs font-semibold glass rounded-full">RISC-V</span>
+                        <span class="px-3 py-1 text-xs font-semibold glass rounded-full">Pipeline</span>
+                    </div>
+                    <a href="https://github.com/DivyaDarshan09/Divya_Darshan-VSD-RISCV-week-1" target="_blank" class="text-blue-600 hover:underline">View Code →</a>
+                </div>
+                <div class="glass-strong rounded-3xl p-6 hover:scale-105 transition-all">
+                    <div class="mb-4 p-4 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 w-fit"><span class="text-white text-2xl">🏭</span></div>
+                    <h3 class="text-2xl font-bold mb-3">CEG Fabless Intern Files</h3>
+                    <p class="text-slate-600 mb-4">Collection of projects from CEG Fabless internship program.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 text-xs font-semibold glass rounded-full">Verilog</span>
+                        <span class="px-3 py-1 text-xs font-semibold glass rounded-full">Internship</span>
+                    </div>
+                    <a href="https://github.com/DivyaDarshan09/CEG-Fabless-Intern-files" target="_blank" class="text-blue-600 hover:underline">View Code →</a>
+                </div>
+                <div class="glass-strong rounded-3xl p-6 hover:scale-105 transition-all">
+                    <div class="mb-4 p-4 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 w-fit"><span class="text-white text-2xl">🔬</span></div>
+                    <h3 class="text-2xl font-bold mb-3">TT-SKY-05</h3>
+                    <p class="text-slate-600 mb-4">Hardware design project implementing advanced digital circuits.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 text-xs font-semibold glass rounded-full">Verilog</span>
+                        <span class="px-3 py-1 text-xs font-semibold glass rounded-full">Hardware</span>
+                    </div>
+                    <a href="https://github.com/DivyaDarshan09/tt-sky-05" target="_blank" class="text-blue-600 hover:underline">View Code →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section pt-16 md:pt-20 min-h-screen">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+            <div class="text-center mb-12">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4"><span class="gradient-text">Resume</span></h1>
+                <p class="text-xl text-slate-600 mb-6">My professional journey and achievements</p>
+                <a href="./resume.pdf" download="Divya_Darshan_Resume.pdf" class="inline-flex px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105">📥 Download Resume</a>
+            </div>
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold mb-8 flex items-center gap-3"><span class="text-blue-500">💼</span><span class="gradient-text">Experience</span></h2>
+                <div class="space-y-6">
+                    <div class="glass-strong rounded-2xl p-6">
+                        <h3 class="text-xl font-bold mb-1">RISC-V Design Intern</h3>
+                        <p class="text-blue-600 font-semibold mb-2">Shakti Processor Project – IIT Madras</p>
+                        <p class="text-sm text-slate-600 mb-3">June 2025 – Present</p>
+                        <p class="text-slate-700">Working on improving processor pipeline design. Hands-on development in Verilog and RISC-V ISA. Focus on performance, debugging, and hardware-software optimization.</p>
+                    </div>
+                    <div class="glass-strong rounded-2xl p-6">
+                        <h3 class="text-xl font-bold mb-1">CEG Fabless Work</h3>
+                        <p class="text-purple-600 font-semibold mb-2">Tiny Tapeout</p>
+                        <p class="text-sm text-slate-600 mb-3">May 2025 – July 2025</p>
+                        <p class="text-slate-700">Designed and implemented a mini processor in Verilog. Completed RTL → GDSII flow using OpenLANE and Sky130 PDK. Performed synthesis, placement, routing and timing closure. Also submitted for tapeout to efabless foundry.</p>
+                    </div>
+                    <div class="glass-strong rounded-2xl p-6">
+                        <h3 class="text-xl font-bold mb-1">Hardware & Embedded Systems Project Work</h3>
+                        <p class="text-pink-600 font-semibold mb-2">CEG – ECEA Projects</p>
+                        <p class="text-sm text-slate-600 mb-3">2024 – 2025</p>
+                        <p class="text-slate-700">Built Smart Trolley system using ESP32 + RFID. Integrated buzzer, I2C LCD, RFID scanning and budget alerting. Demonstrated a practical IoT-based checkout system.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold mb-8 flex items-center gap-3"><span class="text-purple-500">🎓</span><span class="gradient-text">Education</span></h2>
+                <div class="glass-strong rounded-2xl p-6">
+                    <h3 class="text-xl font-bold mb-1">B.E Electronics and Communication Engineering (ECE)</h3>
+                    <p class="text-purple-600 font-semibold mb-2">College of Engineering, Guindy (CEG), Anna University</p>
+                    <p class="text-sm text-slate-600 mb-3">2023 – 2027</p>
+                    <p class="text-slate-700">Chennai, India</p>
+                </div>
+            </div>
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold mb-8 flex items-center gap-3"><span class="text-pink-500">🛠️</span><span class="gradient-text">Technical Skills</span></h2>
+                <div class="glass-strong rounded-2xl p-6">
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-lg font-bold mb-3">Programming & HDL</h4>
+                            <div class="grid md:grid-cols-2 gap-3">
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>C</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>C++</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>Python</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>Assembly (8085, 8086, 8051, RISC-V)</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>Verilog HDL</span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-3">Hardware & Platforms</h4>
+                            <div class="grid md:grid-cols-2 gap-3">
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-purple-500 rounded-full"></div><span>FPGA Prototyping</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-purple-500 rounded-full"></div><span>ESP32</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-purple-500 rounded-full"></div><span>Arduino</span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-3">Design & Communication Protocols</h4>
+                            <div class="grid md:grid-cols-2 gap-3">
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-pink-500 rounded-full"></div><span>PCB Design</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-pink-500 rounded-full"></div><span>UART</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-pink-500 rounded-full"></div><span>I2C</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-pink-500 rounded-full"></div><span>SPI</span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-3">Tools & Software</h4>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>Xilinx Vivado</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>Yosys</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>Qflow</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>Magic VLSI</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>OpenSTA</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>OpenLane</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>LTSpice</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>MATLAB</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>EasyEDA</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>GNU Radio</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>Cisco Packet Tracer</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>CST Antenna Design</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>Arduino IDE</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>Linux</span></div>
+                                <div class="flex items-center gap-3 p-3 glass rounded-lg"><div class="w-2 h-2 bg-blue-500 rounded-full"></div><span>Git & GitHub</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold mb-8 flex items-center gap-3"><span class="text-indigo-500">🏆</span><span class="gradient-text">Key Achievements</span></h2>
+                <div class="glass-strong rounded-2xl p-6">
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3"><div class="mt-1.5 w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div><span>Completed VSD RISC-V Workshop</span></li>
+                        <li class="flex items-start gap-3"><div class="mt-1.5 w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div><span>Designed and implemented mini processor in Verilog (Tiny Tapeout)</span></li>
+                        <li class="flex items-start gap-3"><div class="mt-1.5 w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div><span>Completed full RTL → GDSII flow using OpenLANE and Sky130 PDK</span></li>
+                        <li class="flex items-start gap-3"><div class="mt-1.5 w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div><span>Submitted design for tapeout to efabless foundry</span></li>
+                        <li class="flex items-start gap-3"><div class="mt-1.5 w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div><span>Built Smart Trolley IoT system with ESP32 and RFID</span></li>
+                        <li class="flex items-start gap-3"><div class="mt-1.5 w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div><span>17+ GitHub repositories showcasing hardware projects</span></li>
+                        <li class="flex items-start gap-3"><div class="mt-1.5 w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div><span>Active contributor to RISC-V and hardware design projects</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section pt-16 md:pt-20 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4"><span class="gradient-text">Get In Touch</span></h1>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">Let's connect! Whether you have a project in mind or just want to chat about hardware design.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <a href="tel:9092109353" class="block glass-strong rounded-2xl p-6 hover:scale-105 transition-all">
+                        <div class="flex items-center gap-6">
+                            <div class="p-4 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500"><span class="text-white text-xl">📞</span></div>
+                            <div class="flex-1">
+                                <p class="text-sm text-slate-600 mb-1">Phone</p>
+                                <p class="text-lg font-semibold">9092109353</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="mailto:divyadarshanvr09@gmail.com" class="block glass-strong rounded-2xl p-6 hover:scale-105 transition-all">
+                        <div class="flex items-center gap-6">
+                            <div class="p-4 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500"><span class="text-white text-xl">✉️</span></div>
+                            <div class="flex-1">
+                                <p class="text-sm text-slate-600 mb-1">Email</p>
+                                <p class="text-lg font-semibold">divyadarshanvr09@gmail.com</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/divya-darshan-vr-2b4560289/" target="_blank" class="block glass-strong rounded-2xl p-6 hover:scale-105 transition-all">
+                        <div class="flex items-center gap-6">
+                            <div class="p-4 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-500"><span class="text-white text-xl">💼</span></div>
+                            <div class="flex-1">
+                                <p class="text-sm text-slate-600 mb-1">LinkedIn</p>
+                                <p class="text-lg font-semibold">divya-darshan-vr-2b4560289</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/DivyaDarshan09" target="_blank" class="block glass-strong rounded-2xl p-6 hover:scale-105 transition-all">
+                        <div class="flex items-center gap-6">
+                            <div class="p-4 rounded-xl bg-gradient-to-br from-slate-600 to-slate-800"><span class="text-white text-xl">💻</span></div>
+                            <div class="flex-1">
+                                <p class="text-sm text-slate-600 mb-1">GitHub</p>
+                                <p class="text-lg font-semibold">DivyaDarshan09</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="glass-strong rounded-3xl p-8">
+                    <h2 class="text-3xl font-bold mb-6">Send a Message</h2>
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Name</label>
+                            <input type="text" class="w-full px-4 py-3 glass rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 glass rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your.email@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Message</label>
+                            <textarea rows="6" class="w-full px-4 py-3 glass rounded-xl border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" placeholder="Your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass-strong border-t border-white/20 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold gradient-text mb-4">Divya Darshan</h3>
+                    <p class="text-slate-600 mb-4">Hardware Engineer & Developer specializing in RISC-V architecture, digital design, and embedded systems.</p>
+                    <div class="flex items-center gap-2 text-slate-600"><span>📍</span><span class="text-sm">Chennai, India</span></div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><div class="nav-link text-slate-600 hover:text-blue-600 cursor-pointer" onclick="showSection('home')">Home</div></li>
+                        <li><div class="nav-link text-slate-600 hover:text-blue-600 cursor-pointer" onclick="showSection('about')">About</div></li>
+                        <li><div class="nav-link text-slate-600 hover:text-blue-600 cursor-pointer" onclick="showSection('projects')">Projects</div></li>
+                        <li><div class="nav-link text-slate-600 hover:text-blue-600 cursor-pointer" onclick="showSection('resume')">Resume</div></li>
+                        <li><div class="nav-link text-slate-600 hover:text-blue-600 cursor-pointer" onclick="showSection('contact')">Contact</div></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Get In Touch</h3>
+                    <div class="space-y-3">
+                        <a href="mailto:divyadarshanvr09@gmail.com" class="flex items-center gap-2 text-slate-600 hover:text-blue-600"><span>✉️</span><span class="text-sm">divyadarshanvr09@gmail.com</span></a>
+                        <a href="tel:9092109353" class="flex items-center gap-2 text-slate-600 hover:text-blue-600"><span>📞</span><span class="text-sm">+91 9092109353</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/in/divya-darshan-vr-2b4560289/" target="_blank" class="p-3 glass rounded-xl hover:scale-110 transition-transform text-slate-600 hover:text-blue-600">💼</a>
+                    <a href="https://github.com/DivyaDarshan09" target="_blank" class="p-3 glass rounded-xl hover:scale-110 transition-transform text-slate-600 hover:text-blue-600">💻</a>
+                    <a href="mailto:divyadarshanvr09@gmail.com" class="p-3 glass rounded-xl hover:scale-110 transition-transform text-slate-600 hover:text-blue-600">✉️</a>
+                    <a href="tel:9092109353" class="p-3 glass rounded-xl hover:scale-110 transition-transform text-slate-600 hover:text-blue-600">📞</a>
+                </div>
+                <p class="text-sm text-slate-600">© 2025 Divya Darshan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            if(event && event.target) event.target.classList.add('active');
+            document.getElementById('mobileMenu').classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
+
