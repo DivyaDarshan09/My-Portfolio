@@ -46,6 +46,7 @@
                 <div class="hidden md:flex space-x-8">
                     <div class="nav-link active px-3 py-2 rounded-lg text-sm font-medium transition-all" onclick="showSection('home')">Home</div>
                     <div class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition-all" onclick="showSection('about')">About</div>
+                    <div class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition-all" onclick="showSection('sports')">Sports</div>
                     <div class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition-all" onclick="showSection('projects')">Projects</div>
                     <div class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition-all" onclick="showSection('resume')">Resume</div>
                     <div class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition-all" onclick="showSection('contact')">Contact</div>
@@ -55,6 +56,7 @@
             <div id="mobileMenu" class="hidden md:hidden pb-4 space-y-2">
                 <div class="nav-link px-4 py-2 rounded-lg text-sm font-medium" onclick="showSection('home')">Home</div>
                 <div class="nav-link px-4 py-2 rounded-lg text-sm font-medium" onclick="showSection('about')">About</div>
+                <div class="nav-link px-4 py-2 rounded-lg text-sm font-medium" onclick="showSection('sports')">Sports</div>
                 <div class="nav-link px-4 py-2 rounded-lg text-sm font-medium" onclick="showSection('projects')">Projects</div>
                 <div class="nav-link px-4 py-2 rounded-lg text-sm font-medium" onclick="showSection('resume')">Resume</div>
                 <div class="nav-link px-4 py-2 rounded-lg text-sm font-medium" onclick="showSection('contact')">Contact</div>
@@ -76,7 +78,7 @@
                             <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
                                 <span class="gradient-text">Divya Darshan VR</span>
                             </h1>
-                            <p class="text-2xl md:text-3xl font-semibold text-slate-700">Upcoming Hardware Engineer</p>
+                            <p class="text-2xl md:text-3xl font-semibold text-slate-700">Hardware Engineer & Developer</p>
                             <p class="text-lg md:text-xl text-slate-600 max-w-2xl">Passionate about digital design, Verilog, and creating innovative hardware solutions. Building the future, one circuit at a time.</p>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -88,9 +90,9 @@
                         <div class="relative">
                             <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
                                 <div class="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-full blur-2xl opacity-30"></div>
-                                <div class="relative w-full h-full glass-strong rounded-full p-2 shadow-2xl">
-                                    <img src="./photo.jpg" alt="Divya Darshan" class="w-full h-full object-cover rounded-full border-4 border-white/20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                    <div class="w-full h-full rounded-full bg-gradient-to-br from-blue-500 to-purple-500 items-center justify-center text-white text-4xl md:text-5xl font-bold hidden">DD</div>
+                                <div class="relative w-full h-full glass-strong rounded-2xl p-2 shadow-2xl">
+                                    <img src="./photo.jpg" alt="Divya Darshan" class="w-full h-full object-cover rounded-xl border-4 border-white/20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="w-full h-full rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 items-center justify-center text-white text-4xl md:text-5xl font-bold hidden">DD</div>
                                 </div>
                             </div>
                         </div>
@@ -129,28 +131,29 @@
                 <div class="flex justify-center mb-8">
                     <div class="relative">
                         <div class="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-full blur-2xl opacity-30"></div>
-                        <div class="relative w-48 h-48 md:w-64 md:h-64 glass-strong rounded-full p-2 shadow-2xl">
-                            <img src="./photo.jpg" alt="Divya Darshan VR" class="w-full h-full object-cover rounded-full border-4 border-white/20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="w-full h-full rounded-full bg-gradient-to-br from-blue-500 to-purple-500 items-center justify-center text-white text-3xl md:text-4xl font-bold hidden">DD</div>
+                        <div class="relative w-48 h-48 md:w-64 md:h-64 glass-strong rounded-2xl p-2 shadow-2xl">
+                            <img src="./photo.jpg" alt="Divya Darshan" class="w-full h-full object-cover rounded-xl border-4 border-white/20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-full rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 items-center justify-center text-white text-3xl md:text-4xl font-bold hidden">DD</div>
                         </div>
                     </div>
                 </div>
                 <h1 class="text-5xl md:text-6xl font-extrabold mb-4"><span class="gradient-text">About Me</span></h1>
-                <p class="text-xl text-slate-600 max-w-2xl mx-auto">Passionate hardware engineer with expertise in digital design and RISC-V architecture</p>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">Passionate upcoming VLSI engineer with expertise in digital design and RISC-V architecture</p>
             </div>
             <div class="grid md:grid-cols-2 gap-12 mb-20">
                 <div class="glass-strong rounded-3xl p-8 space-y-6">
                     <h2 class="text-3xl font-bold mb-4">Who I Am</h2>
-                    <p class="text-slate-700 leading-relaxed">I'm a dedicated Pre-Final Year ECE student at College of Engineering, Guindy, Anna University. Worked as a RISC-V Design Intern at IIT Madras's Shakti Processor Project, where I focused on improving Branch Prediction algorithm for Shakti C Class Core.</p>
-                    <p class="text-slate-700 leading-relaxed">My expertise spans from Digital Electronics , Verilog HDL and Computer Architecture. I've also successfully designed and implemented Custom 8085 Replica, submitted to eFabless Foundry, and built practical IoT systems.</p>
+                    <p class="text-slate-700 leading-relaxed">I am Divya Darshan V R, a pre-final year Electronics and Communication Engineering student with a strong passion for hardware design, digital systems, and VLSI development. I enjoy building real-world solutions through hands-on engineering—whether it is designing processors, working with FPGA and ASIC flows, or developing intelligent embedded systems.</p>
+                    <p class="text-slate-700 leading-relaxed">Beyond academics, I am a national-level athlete, a five-time state champion, and have competed in three national championships. I was also selected for the Khelo India Youth Games 2022 held in Bhopal, Madhya Pradesh, reflecting my dedication, perseverance, and commitment to excellence both in sports and personal development.</p>
+                    <p class="text-slate-700 leading-relaxed">I strive to balance strong technical skills with discipline, teamwork, and continuous learning—qualities that drive me to push boundaries and excel in every challenge I take on.</p>
                 </div>
                 <div class="glass-strong rounded-3xl p-8 space-y-6">
                     <h2 class="text-3xl font-bold mb-4">What I Do</h2>
                     <div class="space-y-4">
-                        <div class="flex items-center gap-4"><span class="text-blue-500 text-xl">⚡</span><span class="text-slate-700 text-lg">Digital Circuit Design</span></div>
-                        <div class="flex items-center gap-4"><span class="text-purple-500 text-xl">🔧</span><span class="text-slate-700 text-lg">RISC-V Architecture Design</span></div>
-                        <div class="flex items-center gap-4"><span class="text-pink-500 text-xl">💻</span><span class="text-slate-700 text-lg">FPGA Development</span></div>
-                        <div class="flex items-center gap-4"><span class="text-indigo-500 text-xl">✅</span><span class="text-slate-700 text-lg">Hardware Verification</span></div>
+                        <div class="flex items-center gap-4"><span class="text-blue-500 text-xl">🔌</span><span class="text-slate-700 text-lg">Digital Logic Design</span></div>
+                        <div class="flex items-center gap-4"><span class="text-purple-500 text-xl">⚙️</span><span class="text-slate-700 text-lg">RISC-V Processor Development</span></div>
+                        <div class="flex items-center gap-4"><span class="text-pink-500 text-xl">💻</span><span class="text-slate-700 text-lg">FPGA & ASIC Implementation</span></div>
+                        <div class="flex items-center gap-4"><span class="text-indigo-500 text-xl">🛠️</span><span class="text-slate-700 text-lg">VLSI Design Flow & EDA Tools</span></div>
                     </div>
                 </div>
             </div>
@@ -218,6 +221,111 @@
                         </div>
                         <p class="text-sm text-slate-600">Internship in fabless semiconductor design</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports Section -->
+    <section id="sports" class="section pt-16 md:pt-20 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4"><span class="gradient-text">Sports & Achievements</span></h1>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">National-level athlete with a passion for excellence both on and off the field</p>
+            </div>
+            
+            <!-- Sports Highlights -->
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div class="glass-strong rounded-3xl p-8">
+                    <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+                        <span class="text-yellow-500 text-4xl">🏆</span>
+                        <span class="gradient-text">Athletic Achievements</span>
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-2 h-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-semibold text-slate-800">National-Level Athlete</p>
+                                <p class="text-slate-600 text-sm">Competed at the highest level of competition</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-2 h-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-semibold text-slate-800">Five-Time State Champion</p>
+                                <p class="text-slate-600 text-sm">Consistent excellence at state-level competitions</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-2 h-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-semibold text-slate-800">Three National Championships</p>
+                                <p class="text-slate-600 text-sm">Represented at national-level competitions</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-2 h-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-semibold text-slate-800">Khelo India Youth Games 2022</p>
+                                <p class="text-slate-600 text-sm">Selected for Khelo India Youth Games held in Bhopal, Madhya Pradesh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-strong rounded-3xl p-8">
+                    <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+                        <span class="text-green-500 text-4xl">💪</span>
+                        <span class="gradient-text">Values & Skills</span>
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-semibold text-slate-800">Dedication & Perseverance</p>
+                                <p class="text-slate-600 text-sm">Commitment to excellence in every endeavor</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-semibold text-slate-800">Teamwork & Leadership</p>
+                                <p class="text-slate-600 text-sm">Collaborative spirit and ability to lead</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-semibold text-slate-800">Discipline & Balance</p>
+                                <p class="text-slate-600 text-sm">Maintaining excellence in academics and sports</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-semibold text-slate-800">Continuous Learning</p>
+                                <p class="text-slate-600 text-sm">Always pushing boundaries and seeking growth</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sports Certifications -->
+            <div>
+                <h2 class="text-4xl font-bold mb-8 text-center"><span class="gradient-text">Sports Certificates</span></h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="sportsCertificates">
+                    <!-- Certificates will be added here -->
+                    <div class="glass-strong rounded-2xl p-6 hover:scale-105 transition-transform text-center">
+                        <div class="p-3 glass rounded-xl mb-4 inline-block">
+                            <span class="text-yellow-500 text-4xl">🏅</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-2">Add your sports certificates</p>
+                        <p class="text-xs text-slate-500">Upload certificate images to display here</p>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <p class="text-slate-600 mb-4">To add certificates, upload images and update the HTML file</p>
                 </div>
             </div>
         </div>
@@ -488,6 +596,7 @@
                     <ul class="space-y-2">
                         <li><div class="nav-link text-slate-600 hover:text-blue-600 cursor-pointer" onclick="showSection('home')">Home</div></li>
                         <li><div class="nav-link text-slate-600 hover:text-blue-600 cursor-pointer" onclick="showSection('about')">About</div></li>
+                        <li><div class="nav-link text-slate-600 hover:text-blue-600 cursor-pointer" onclick="showSection('sports')">Sports</div></li>
                         <li><div class="nav-link text-slate-600 hover:text-blue-600 cursor-pointer" onclick="showSection('projects')">Projects</div></li>
                         <li><div class="nav-link text-slate-600 hover:text-blue-600 cursor-pointer" onclick="showSection('resume')">Resume</div></li>
                         <li><div class="nav-link text-slate-600 hover:text-blue-600 cursor-pointer" onclick="showSection('contact')">Contact</div></li>
@@ -528,5 +637,4 @@
     </script>
 </body>
 </html>
-
 
